@@ -14,35 +14,21 @@
     background-color: var(--bg-color);
 }
 
-.custom-nav {
-  background-color: var(--bg-color);
-  padding: 10px 20px;
-  position: relative;
+nav {
+    display: flex;
+    margin: auto 20px;
+    background-color: var(--bg-color);
 }
 
-.navbar-brand {
-  color: var(--text-color);
-  font-weight: bold;
-  font-size: 24px;
+.nav-cont {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
 }
 
-.navbar-brand:hover {
-  color: var(--cta-color);
-  cursor: pointer;
-}
-
-.nav-link {
-  color: var(--text-color);
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: 0.2s;
-}
-
-.nav-link:hover {
-  background-color: var(--secondary-bg);
-  color: var(--cta-color);
-}
-
-.navbar-toggler-icon {
-    background-color: aliceblue;
+.nav-cont a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 20px;
 }
