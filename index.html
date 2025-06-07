@@ -8,11 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+
+    </style>
 </head>
   <body>
 
     <nav>
         <h1>AZIS</h1>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <div class="nav-cont">
             <a href="#">Home</a>
             <a href="#about">About</a>
@@ -44,6 +54,43 @@
 
 
 
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        // JavaScript untuk fungsionalitas hamburger menu (menggunakan jQuery)
+        $(document).ready(function() {
+            const $hamburger = $('.hamburger-menu');
+            const $navCont = $('.nav-cont');
+            const $body = $('body');
+
+            $hamburger.on('click', function() {
+                $hamburger.toggleClass('active');
+                $navCont.toggleClass('active');
+                $body.toggleClass('no-scroll');
+            });
+
+            // Menutup menu saat tautan diklik
+            $navCont.find('a').on('click', function() {
+                $hamburger.removeClass('active');
+                $navCont.removeClass('active');
+                $body.removeClass('no-scroll');
+            });
+        });
+    </script>
+
+    <style>
+        /* Gaya tambahan untuk mencegah scroll saat menu terbuka (opsional) */
+        body.no-scroll {
+            overflow: hidden;
+        }
+    </style>
 
     </body>
 </html>
