@@ -1,0 +1,48 @@
+:root {
+  --bg-color: #181A1B;
+  --text-color: #F5F6FA;
+  --accent-color: #4F8EF7;
+  --secondary-bg: #2C2F33;
+  --cta-color: #00C897;
+  --border-color: #3A3B3C;
+}
+
+
+* {
+    font-family: "montserrat", sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.custom-nav {
+  background-color: var(--bg-color);
+  padding: 10px 20px;
+  position: relative;
+}
+
+.navbar-brand {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.navbar-brand:hover {
+  color: var(--cta-color);
+  cursor: pointer;
+}
+
+.nav-link {
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  background-color: var(--secondary-bg);
+  color: var(--cta-color);
+}
+
+.navbar-toggler-icon {
+    background-color: aliceblue;
+}
