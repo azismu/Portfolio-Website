@@ -5,6 +5,58 @@
   --secondary-bg: #2C2F33;
   --cta-color: #00C897;
   --border-color: #3A3B3C;
+
+    /* Warna untuk hero section */
+    --hero-bg: #181A1B;         /* warna dasar */
+    --hero-text: #F5F6FA;
+    --hero-accent: #4F8EF7;     /* buat nama atau CTA */
+    --hero-cta-bg: #00C897;
+    --hero-cta-hover: #00b08a;
+
+    /* Warna untuk about section */
+    --about-bg: #1E1F21;
+    --about-text: #D1D5DB;
+    --about-highlight: #4F8EF7;   /* buat bold name, skill, dll */
+    --about-border: #2C2F33;
+
+    /* Warna untuk skills section */
+    --skills-bg: #23272A;
+    --skills-text: #E5E7EB;
+    --skills-icon-bg: #2C2F33;
+    --skills-icon-shadow: rgba(79, 142, 247, 0.15);
+
+    /* Warna untuk service section */
+    --services-bg: #202225;
+    --services-card-bg: #2C2F33;
+    --services-text: #F5F6FA;
+    --services-icon: #00ADB5;
+
+    /* Warna untuk portfolio section */
+    --portfolio-bg: #181A1B;
+    --portfolio-card-bg: #23272A;
+    --portfolio-title: #4F8EF7;
+    --portfolio-text: #D1D5DB;
+    --portfolio-hover-shadow: rgba(79, 142, 247, 0.15);
+
+    /* Warna untuk testimonial section */
+    --testimonial-bg: #1F2225;
+    --testimonial-text: #F5F6FA;
+    --testimonial-border: #4F8EF7;
+    --testimonial-shadow: rgba(0, 200, 151, 0.1);
+
+    /* Warna untuk contact section */
+    --contact-bg: #181A1B url("bg/bgcont.png") no-repeat center/cover;
+    --contact-form-bg: #23272A;
+    --contact-border: #4F8EF7;
+    --contact-input-bg: #2C2F33;
+    --contact-input-text: #F5F6FA;
+    --contact-button-bg: #00C897;
+    --contact-button-hover: #00b08a;
+
+    /* Warna untuk footer */
+    --footer-bg: #111213;
+    --footer-text: #A1A1AA;
+    --footer-accent: #4F8EF7;
 }
 
 /* Reset dasar yang sudah ada */
@@ -15,6 +67,7 @@
     box-sizing: border-box; /* Tambahkan ini agar padding dan border tidak menambah ukuran elemen */
     margin: 0; /* Tambahkan ini untuk menghilangkan margin default browser */
     padding: 0; /* Tambahkan ini untuk menghilangkan padding default browser */
+    scroll-behavior: smooth;
 }
 
 
@@ -24,13 +77,18 @@ nav {
     display: flex;
     justify-content: space-between; /* Ubah ini agar logo dan menu terpisah */
     align-items: center;
-    margin: auto 50px;
     background-color: var(--bg-color);
     padding: 15px 0; /* Tambahkan padding agar ada jarak atas dan bawah */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 nav h1 {
     background-color: transparent; /* Pastikan judul juga transparan jika perlu */
+    margin-left: 50px;
 }
 
 .nav-cont {
@@ -44,7 +102,7 @@ nav h1 {
 .nav-cont a {
     text-decoration: none;
     font-weight: 600;
-    margin-left: 20px;
+    margin-right: 50px;
     padding: 10px;
     background-color: transparent; /* Penting agar hover bekerja dengan baik */
 }
@@ -66,6 +124,7 @@ nav h1 {
     cursor: pointer;
     background-color: transparent;
     z-index: 1000; /* Pastikan di atas elemen lain */
+    margin-right: 10%;
 }
 
 .hamburger-menu .bar {
@@ -80,28 +139,181 @@ nav h1 {
 
 /* BAGIAN OPENING */
 
-.hero {
+#hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh; /* Tinggi penuh viewport */
+    background-color: var(--hero-bg); /* Warna latar belakang hero */
+}
+
+#hero h1 {
+    font-size: 3rem; /* Ukuran teks yang lebih besar */
+    color: var(--hero-text);
+    text-align: center;
+    margin-top: 20px; /* Jarak bawah untuk memberi ruang */
+    
+}
+
+#hero img {
+    margin-top: 20px; /* Jarak atas untuk memberi ruang */
+    width: 50%; 
+    height: 50%; 
 }
 
 .opening {
     text-align: center;
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+    gap: 20px; /* Tambahkan jarak antar elemen */
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+}
+
+.btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;;
+}
+
+.btn a {
+    padding: 10px 20px;
+    color: var(--hero-text);
+    text-decoration: none;
+    background-color: var(--hero-accent);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn a:hover {
+    background-color: var(--hero-cta-hover);
+    transition: background-color 0.3s ease;
+    color: var(--hero-text);
+}
+
+
+/* BAGIAN ABOUT */
+
+#about {
+    display: flex;
+    margin: auto 50px;
+    padding: 50px auto; /* Tambahkan padding untuk ruang di sekitar */
+    background-color: var(--about-bg);
+}
+
+.me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.me h2 {
+    margin: 50px auto;
+    color: var(--about-text);
+}
+
+.me p {
+    color: var(--about-text);
+    line-height: 1.6; /* Tambahkan jarak antar baris untuk keterbacaan */
+    margin: auto 100px;
+    text-align: justify;
+}
+
+.me p span {
+    color: var(--about-highlight); /* Highlight untuk nama atau skill */
+    font-weight: bold; /* Buat teks lebih tebal */
+}
+
+.me a {
+    margin: 30px auto;
+    text-decoration: none;
+    color: var(--about-text); /* Warna tautan */
+    font-weight: bold; /* Buat tautan lebih tebal */
+    background-color: var(--about-highlight);
+    padding: 10px 20px;
+    border-radius: 5px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    transition: background-color 0.3s ease;
+}
+
+.me a:hover {
+    background-color: var(--hero-cta-hover); /* Warna latar belakang saat hover */
+    color: var(--hero-text); /* Warna teks saat hover */
+}
+
+/* BAGIAN SKILLS */
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--skills-bg);
+    padding: 50px 0; /* Tambahkan padding untuk ruang di sekitar */
+}
+
+#skills h1 {
+    color: var(--skills-text);
+    margin-bottom: 30px; /* Tambahkan jarak bawah untuk judul */
+    text-align: center; /* Pusatkan teks */
+    background-color: var(--skills-icon-bg);
+    padding: 10px 20px; /* Tambahkan padding untuk ruang di sekitar */
+    border-radius: 5px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+    gap: 50px; /* Tambahkan jarak antar elemen */
+    background-color: var(--skills-bg);
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+    width: 60%; /* Lebar kontainer */
+}
+
+.teknis, .n-teknis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--skills-icon-bg);
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+    border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 }
 
 
 
+.teknis:hover, .n-teknis:hover {
+    transform: translateY(-5px); /* Efek hover untuk mengangkat elemen */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lebih dalam saat hover */
 
+}
+.teknis h2, .teknis p, .n-teknis h2, .n-teknis p {
+    color: var(--skills-text);
+    margin: 10px auto; /* Tambahkan jarak bawah untuk judul */
+    background-color: var(--skills-icon-bg);
+    text-align: center; /* Pusatkan teks */
+}
 
+.teknis h3, .n-teknis h3 {
+    background-color: var(--skills-icon-bg);
+    color: var(--skills-text);
+    margin: 10px auto; /* Tambahkan jarak atas untuk subjudul */
+    text-align: center; /* Pusatkan teks */
+}
 
-
-
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--skills-icon-bg);
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+}
 
 
 
