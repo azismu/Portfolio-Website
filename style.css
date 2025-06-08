@@ -284,14 +284,13 @@ nav h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 }
 
-
-
 .teknis:hover, .n-teknis:hover {
     transform: translateY(-5px); /* Efek hover untuk mengangkat elemen */
     transition: transform 0.3s ease; /* Transisi halus saat hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lebih dalam saat hover */
 
 }
+
 .teknis h2, .teknis p, .n-teknis h2, .n-teknis p {
     color: var(--skills-text);
     margin: 10px auto; /* Tambahkan jarak bawah untuk judul */
@@ -300,10 +299,14 @@ nav h1 {
 }
 
 .teknis h3, .n-teknis h3 {
+    display: flex;
     background-color: var(--skills-icon-bg);
     color: var(--skills-text);
     margin: 10px auto; /* Tambahkan jarak atas untuk subjudul */
     text-align: center; /* Pusatkan teks */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Lebar penuh */
 }
 
 .skill {
@@ -312,9 +315,15 @@ nav h1 {
     align-items: center;
     justify-content: center;
     background-color: var(--skills-icon-bg);
-    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+    padding: 20px 0; /* Tambahkan padding untuk ruang di sekitar */
 }
 
+.teknis img, .n-teknis img {
+    margin-right: 20px;
+    width: 50px; /* Ukuran ikon */
+    border-radius: 10px; /* Bentuk bulat */
+    background-color: var(--skills-icon-bg);
+}
 
 
 
