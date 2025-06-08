@@ -196,50 +196,81 @@ nav h1 {
 /* BAGIAN ABOUT */
 
 #about {
-    display: flex;
-    margin: auto 50px;
-    padding: 50px auto; /* Tambahkan padding untuk ruang di sekitar */
+    padding: 50px; /* Tambahkan padding untuk ruang di sekitar */
     background-color: var(--about-bg);
+    width: 100%; /* Lebar penuh */
+}
+
+#about h2 {
+    color: var(--about-text);
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 30px; /* Tambahkan jarak bawah untuk judul */
+    font-size: 2.5rem; /* Ukuran teks yang lebih besar */
+    background-color: var(--about-bg);
+    padding: 50px;
 }
 
 .me {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dua kolom */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    gap: 40px; /* Tambahkan jarak antar elemen */
+    background-color: var(--about-bg);
+    width: 100%; /* Lebar penuh */
+}
+
+.deskripsi {
+    color: var(--about-text);
+    font-size: 1.2rem; /* Ukuran teks yang lebih besar */
     align-items: center;
-    justify-content: center;
-}
-
-.me h2 {
-    margin: 50px auto;
-    color: var(--about-text);
-}
-
-.me p {
-    color: var(--about-text);
-    line-height: 1.6; /* Tambahkan jarak antar baris untuk keterbacaan */
-    margin: auto 100px;
+    line-height: 1.6; /* Jarak antar baris */
+    padding: 50px; /* Tambahkan padding untuk ruang di sekitar */
+    background-color: var(--about-bg);
     text-align: justify;
 }
 
-.me p span {
-    color: var(--about-highlight); /* Highlight untuk nama atau skill */
-    font-weight: bold; /* Buat teks lebih tebal */
+.deskripsi p {
+    margin-left: 50px; /* Tambahkan jarak kiri untuk paragraf */
+    margin-bottom: 50px; /* Tambahkan jarak bawah untuk paragraf */
+    color: var(--about-text);
+    background-color: var(--about-bg);
 }
 
-.me a {
-    margin: 30px auto;
-    text-decoration: none;
-    color: var(--about-text); /* Warna tautan */
-    font-weight: bold; /* Buat tautan lebih tebal */
+.deskripsi span {
+    color: var(--about-highlight); /* Warna untuk teks yang di-highlight */
+    font-weight: bold; /* Tebalkan teks yang di-highlight */
+    background-color: var(--about-bg); /* Pastikan latar belakang tetap konsisten */
+}
+
+.deskripsi a {
+    margin-left: 50px; /* Tambahkan jarak kiri untuk tautan */
+    color: var(--about-text); /* Warna untuk tautan */
+    font-weight: bold; /* Tebalkan teks tautan */
+    text-decoration: none; /* Hilangkan garis bawah pada tautan */
     background-color: var(--about-highlight);
-    padding: 10px 20px;
+    padding: 10px 20px; /* Tambahkan padding untuk ruang di sekitar */
     border-radius: 5px; /* Tambahkan border radius untuk sudut yang lebih halus */
-    transition: background-color 0.3s ease;
 }
 
-.me a:hover {
-    background-color: var(--hero-cta-hover); /* Warna latar belakang saat hover */
-    color: var(--hero-text); /* Warna teks saat hover */
+.deskripsi a:hover {
+    background-color: var(--contact-button-hover); /* Ubah latar belakang saat hover */
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */   
+}
+
+.me img {
+    justify-self: center; /* Pusatkan gambar di dalam grid */
+    width: 50%;
+    border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    background-color: var(--about-bg); /* Pastikan latar belakang tetap konsisten */
+}
+
+.me img:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lebih dalam saat hover */
 }
 
 /* BAGIAN SKILLS */
