@@ -84,14 +84,20 @@ nav {
     left: 0;
     width: 100%;
     z-index: 100;
+    padding: auto 50px; /* Tambahkan margin untuk memberi ruang di sekitar menu */
+
 }
 
 nav h1 {
     background-color: transparent; /* Pastikan judul juga transparan jika perlu */
-    margin-left: 50px;
+    color: var(--text-color);
+    font-weight: 600; /* Tebalkan teks */
+    margin: 0;
+    padding-left: 50px;
 }
 
 .nav-cont {
+    padding-right: 40px;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -100,9 +106,10 @@ nav h1 {
 }
 
 .nav-cont a {
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
-    margin-right: 50px;
+    margin-right: 20px;
     padding: 10px;
     background-color: transparent; /* Penting agar hover bekerja dengan baik */
 }
@@ -140,12 +147,14 @@ nav h1 {
 /* BAGIAN OPENING */
 
 #hero {
+    background-color: var(--hero-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh; /* Tinggi penuh viewport */
     background-color: var(--hero-bg); /* Warna latar belakang hero */
+    margin-top: 30px;
 }
 
 #hero h1 {
@@ -158,8 +167,17 @@ nav h1 {
 
 #hero img {
     margin-top: 20px; /* Jarak atas untuk memberi ruang */
-    width: 50%; 
-    height: 50%; 
+    width: 400px; 
+    height: 400px; 
+    border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+}
+
+#hero img:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 }
 
 .opening {
@@ -169,6 +187,20 @@ nav h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px; /* Tambahkan jarak antar elemen */
     padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+}
+
+.opening p {
+    color: var(--hero-text);
+    font-size: 1.2rem; /* Ukuran teks yang lebih besar */
+    line-height: 1.6; /* Jarak antar baris */
+    margin: 10px 0; /* Tambahkan jarak atas dan bawah untuk paragraf */
+    background-color: var(--hero-bg); /* Pastikan latar belakang tetap konsisten */
+}
+
+.opening p:hover {
+    color: var(--hero-accent); /* Ubah warna teks saat hover */
+    transition: color 0.3s ease; /* Transisi halus saat hover */
+    cursor: pointer;
 }
 
 .btn {
@@ -288,11 +320,7 @@ nav h1 {
     color: var(--skills-text);
     margin-bottom: 30px; /* Tambahkan jarak bawah untuk judul */
     text-align: center; /* Pusatkan teks */
-    background-color: var(--skills-icon-bg);
-    padding: 10px 20px; /* Tambahkan padding untuk ruang di sekitar */
-    border-radius: 5px; /* Tambahkan border radius untuk sudut yang lebih halus */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
-
+    background-color: var(--skills-bg);
 }
 
 .skills-container {
@@ -313,6 +341,7 @@ nav h1 {
     padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
     border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
 }
 
 .teknis:hover, .n-teknis:hover {
@@ -359,12 +388,81 @@ nav h1 {
 
 /* BAGIAN SERVICE */
 
+.carousel-caption {
+    background-color: var(--services-card-bg);
+    border-radius: 5px;
+}
 
+.carousel-caption p, .carousel-caption h5 {
+    background-color: var(--services-card-bg);
+    color: var(--services-text);
+}
 
+.carousel-caption h5 {
+    background-color: var(--services-card-bg);
+    color: var(--services-text);
+    font-weight: 600; /* Tebalkan teks */
+    margin-bottom: 10px; /* Tambahkan jarak bawah untuk judul */
+}
 
+/* BAGIAN PROJECT */
 
+#project {
+    background-color: var(--portfolio-bg);
+    padding: 50px 0; /* Tambahkan padding untuk ruang di sekitar */
+}
 
+#project h1 {
+    color: var(--portfolio-title);
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 30px; /* Tambahkan jarak bawah untuk judul */
+    font-size: 2.5rem; /* Ukuran teks yang lebih besar */
+    font-weight: 600;
+}
 
+.project-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tiga baris */
+    gap: 20px; /* Tambahkan jarak antar elemen */
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+    background-color: var(--portfolio-bg);
+    margin-top: 50px;
+}
+
+.project {
+    width: 75%; /* Lebar kontainer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: var(--portfolio-card-bg);
+    padding: 20px; /* Tambahkan padding untuk ruang di sekitar */
+    border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    transition: box-shadow 0.3s ease; /* Transisi halus saat hover */
+}
+
+.project:hover {
+    box-shadow: 0 4px 8px var(--portfolio-hover-shadow); /* Tambahkan bayangan saat hover */
+    transition: box-shadow 0.3s ease; /* Transisi halus saat hover */
+}
+
+.project img {
+    background-color: var(--portfolio-card-bg);
+    width: 75%; /* Ukuran gambar */
+    margin: 30px auto;
+    border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+.project h3, .project p {
+    color: var(--portfolio-text);
+    text-align: center; /* Pusatkan teks */
+    margin: 10px 0; /* Tambahkan jarak atas dan bawah untuk teks */
+    background-color: var(--portfolio-card-bg);
+    font-weight: 600; /* Tebalkan teks */
+}
 
 
 
@@ -407,6 +505,8 @@ nav h1 {
 
 /* Media Queries untuk Mobile dan Tablet */
 @media (max-width: 768px) { /* Batas ukuran untuk tablet dan mobile */
+    /* NAV QUERY */
+    
     nav {
         margin: auto 20px; /* Sesuaikan margin untuk layar kecil */
     }
