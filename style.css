@@ -157,15 +157,15 @@ nav h1 {
     margin-top: 30px;
 }
 
-#hero h1 {
+.hay h1 {
     font-size: 3rem; /* Ukuran teks yang lebih besar */
     color: var(--hero-text);
     text-align: center;
     margin-top: 20px; /* Jarak bawah untuk memberi ruang */
-    
+    font-weight: 600;   
 }
 
-#hero img {
+.hay img {
     margin-top: 20px; /* Jarak atas untuk memberi ruang */
     width: 400px; 
     height: 400px; 
@@ -174,10 +174,15 @@ nav h1 {
     transition: transform 0.3s ease; /* Transisi halus saat hover */
 }
 
-#hero img:hover {
+.hay img:hover {
     transform: scale(1.05); /* Efek zoom saat hover */
     transition: transform 0.3s ease; /* Transisi halus saat hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+.hay:hover h1 {
+    color: var(--hero-accent); /* Ubah warna teks saat hover */
+    transition: color 0.3s ease; /* Transisi halus saat hover */
 }
 
 .opening {
@@ -445,7 +450,7 @@ nav h1 {
 
 .project:hover {
     box-shadow: 0 4px 8px var(--portfolio-hover-shadow); /* Tambahkan bayangan saat hover */
-    transition: box-shadow 0.3s ease; /* Transisi halus saat hover */
+    /* Animasi scale gambar akan ditambahkan di bawah, tidak di sini */
 }
 
 .project img {
@@ -454,6 +459,15 @@ nav h1 {
     margin: 30px auto;
     border-radius: 10px; /* Tambahkan border radius untuk sudut yang lebih halus */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    /* --- Tambahan untuk animasi scale --- */
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi untuk properti transform */
+    /* --- Akhir tambahan --- */
+}
+
+.project:hover img {
+    /* --- Tambahan untuk animasi scale --- */
+    transform: scale(1.2); /* Memperbesar gambar 5% dari ukuran aslinya */
+    /* --- Akhir tambahan --- */
 }
 
 .project h3, .project p {
@@ -462,20 +476,175 @@ nav h1 {
     margin: 10px 0; /* Tambahkan jarak atas dan bawah untuk teks */
     background-color: var(--portfolio-card-bg);
     font-weight: 600; /* Tebalkan teks */
+
+}
+
+.project:hover h3 {
+    color: var(--portfolio-title); /* Ubah warna teks saat hover */
+    transition: color 0.3s ease; /* Transisi halus saat hover */
 }
 
 
+/* BAGIAN CONTACT */
 
+#contact {
+    background-color: var(--contact-bg);
+    padding: 50px 0; /* Tambahkan padding untuk ruang di sekitar */
+    background-size: cover; /* Pastikan gambar latar belakang menutupi seluruh area */
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: column;
+}
 
+#contact h1 {
+    color: var(--contact-input-text);
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 30px; /* Tambahkan jarak bawah untuk judul */
+    font-size: 2.5rem; /* Ukuran teks yang lebih besar */
+    font-weight: 600;
+}
 
+.contact-cont {
+    display: grid;
+    /* Kita akan membuat 2 kolom dengan lebar yang sama */
+    grid-template-columns: 1fr 1fr;
+    /* Kita akan memiliki 4 baris:
+       Baris 1 & 2: Untuk label dan input nama/email
+       Baris 3 & 4: Untuk label dan textarea message
+       Baris 5: Untuk button */
+    grid-template-rows: auto auto auto auto auto;
+    gap: 15px; /* Memberikan sedikit jarak antar elemen */
+    max-width: 600px; /* Lebar maksimal form agar tidak terlalu lebar */
+    margin: auto; /* Menengahkan form di halaman */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--contact-form-bg); /* Latar belakang form */
+    border: 1px solid var(--contact-border);
+}
 
+.contact-cont form {
+    display: contents; /* Membiarkan grid bekerja pada elemen form */
+}
 
+.contact-cont label[for="name"] {
+    grid-column: 1 / 2; /* Mulai dari kolom 1, berakhir sebelum kolom 2 (jadi di kolom 1) */
+    grid-row: 1 / 2;    /* Di baris pertama */
+    padding:  10px; /* Tambahkan padding untuk ruang di dalam label */
+    color: var(--contact-input-text);
+    background-color: var(--contact-form-bg);
+}
 
+.contact-cont input#name {
+    grid-column: 1 / 2; /* Di kolom 1 */
+    grid-row: 2 / 3;    /* Di baris kedua */
+}
 
+/* Label Email dan Input Email */
+.contact-cont label[for="email"] {
+    grid-column: 2 / 3; /* Di kolom 2 */
+    grid-row: 1 / 2;    /* Di baris pertama (sejajar dengan label nama) */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam label */
+    color: var(--contact-input-text);
+    background-color: var(--contact-form-bg); /* Latar belakang label email */
+}
 
+.contact-cont input#email {
+    grid-column: 2 / 3; /* Di kolom 2 */
+    grid-row: 2 / 3;    /* Di baris kedua (sejajar dengan input nama) */
+}
 
+/* Label Pesan dan Textarea Pesan */
+.contact-cont label[for="message"] {
+    grid-column: 1 / 3; /* Melintasi kedua kolom (dari kolom 1 sampai sebelum kolom 3) */
+    grid-row: 3 / 4;    /* Di baris ketiga */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam label */
+    color: var(--contact-input-text);
+    background-color: var(--contact-form-bg); /* Latar belakang label pesan */
+}
 
+.contact-cont textarea#message {
+    grid-column: 1 / 3; /* Melintasi kedua kolom */
+    grid-row: 4 / 5;    /* Di baris keempat */
+    min-height: 100px;  /* Tinggi minimum untuk textarea */
+    resize: vertical; /* Memungkinkan pengguna mengubah ukuran textarea secara vertikal */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam textarea */
+    background-color: var(--contact-input-bg); /* Latar belakang textarea */
+    color: var(--contact-input-text); /* Warna teks di dalam textarea */
+}
 
+/* Tombol Kirim */
+.contact-cont button {
+    grid-column: 1 / 3; /* Melintasi kedua kolom */
+    grid-row: 5 / 6;    /* Di baris kelima */
+    justify-self: center; /* Menengahkan tombol secara horizontal di dalam kolomnya */
+    width: fit-content; /* Agar lebar tombol hanya seukuran isinya */
+    padding: 10px 20px;
+    background-color: var(--contact-button-bg);
+    color: var(--contact-input-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600; /* Tebalkan teks tombol */
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+}
+
+.contact-cont button:hover {
+    background-color: var(--contact-button-hover);
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+}
+
+/* Gaya dasar untuk input dan textarea */
+.contact-cont input[type="text"],
+.contact-cont input[type="email"],
+.contact-cont textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #var(--contact-border);
+    background-color: var(--contact-input-bg);
+    border-radius: 4px;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+}
+
+.contact-sosmed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Tambahkan jarak antar ikon */
+    margin-top: 20px; /* Tambahkan jarak atas untuk memberi ruang */
+    width: 100%; /* Lebar penuh */
+    background-color: var(--contact-bg); /* Pastikan latar belakang tetap konsisten */
+}
+
+.fig-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Lebar ikon */
+    height: 50px; /* Tinggi ikon */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    padding: 50px;
+    filter: grayscale(1);
+}
+
+.fig-box:hover {
+    transform: scale(1.1); /* Efek zoom saat hover */
+    transition: transform 0.3s ease; /* Transisi halus saat hover */
+    cursor: pointer;
+    filter: grayscale(0);
+}
+
+.fig-box img {
+    width: 30px; /* Ukuran ikon */
+    height: 30px; /* Ukuran ikon */
+    margin-bottom: 10px;
+}
 
 
 
